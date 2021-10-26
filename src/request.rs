@@ -85,6 +85,13 @@ impl<'a> CanonicalRequestBuilder<'a> {
         self
     }
 
+    pub fn header_opt(&'a mut self, name: &'a str, value: Option<&'a str>) -> &'a mut Self {
+        if let Some(value) = value {
+            self.headers.insert(name, value);
+        }
+        self
+    }
+
     pub fn param(&'a mut self, name: &'a str, value: &'a str) -> &'a mut Self {
         self.params.insert(name, vec![value]);
         self
