@@ -16,6 +16,7 @@ pub const X_AMZ_DATE: &str = "x-amz-date";
 pub const AUTHORIZATION: &str = "Authorization";
 pub const AWS_JSON_CONTENT_TYPE: &str = "application/x-amz-json-1.0";
 pub const X_AWZ_TARGET: &str = "X-Amz-Target";
+pub const X_AMZ_SECURITY_TOKEN: &str = "X-Amz-Security-Token";
 
 #[derive(Debug)]
 pub struct AWSDate {
