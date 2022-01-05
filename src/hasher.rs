@@ -5,7 +5,7 @@ use crate::error::{SigningError, SigningErrorCause::InvalidKeyLength};
 
 type HmacSha256 = Hmac<Sha256>;
 
-pub fn calulate_hmac_sha_256(key: &[u8], value: &str) -> Result<Vec<u8>, SigningError> {
+pub fn calculate_hmac_sha_256(key: &[u8], value: &str) -> Result<Vec<u8>, SigningError> {
     let mut mac = HmacSha256::new_from_slice(key).map_err(|error| SigningError {
         cause: InvalidKeyLength(error.to_string()),
     })?;
